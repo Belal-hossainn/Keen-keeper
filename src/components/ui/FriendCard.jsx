@@ -1,6 +1,8 @@
+import { Link } from "react-router";
+
 const FriendCard = ({ friend }) => {
   return (
-    <div className="card bg-base-100 flex flex-col justify-center items-center shadow-sm py-6">
+    <Link to={`/friend/${friend.id}`} className="card bg-base-100 flex flex-col justify-center items-center shadow-sm py-6">
   <figure className="rounded">
     <img className="w-[100px] h-[100px] object-cover rounded-full"
       src={friend.picture}
@@ -16,7 +18,7 @@ const FriendCard = ({ friend }) => {
     </div>
       <div className="badge rounded-full px-4 py-2 bg-red-400 text-white">{friend.status}</div>
   </div>
-</div>
+</Link>
   );
 };
 
