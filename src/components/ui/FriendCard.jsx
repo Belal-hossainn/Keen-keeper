@@ -16,7 +16,9 @@ const FriendCard = ({ friend }) => {
     <div className="flex items-center gap-2">
         {friend.tags.map(tag => (<div key={tag} className="badge  rounded-full px-4 py-2 bg-green-200 text-[12px] ">{tag.toUpperCase()}</div>))}
     </div>
-      <div className="badge rounded-full px-4 py-2 bg-red-400 text-white">{friend.status}</div>
+      <div className={`badge rounded-full px-4 py-2 text-white ${friend.status === 'on-track' ? 'bg-[#244D3F]' : friend.status === 'almost due' ? 'bg-[#EFAD44]' : 'bg-red-500'}`}>
+        {friend.status}
+      </div>
   </div>
 </Link>
   );
