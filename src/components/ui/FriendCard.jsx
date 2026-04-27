@@ -1,5 +1,8 @@
 import { Link } from "react-router";
 
+
+
+
 const FriendCard = ({ friend }) => {
   return (
     <Link to={`/friend/${friend.id}`} className="card bg-base-100 flex flex-col justify-center items-center shadow-sm py-6">
