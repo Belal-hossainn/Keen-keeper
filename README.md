@@ -1,16 +1,33 @@
-# React + Vite
+# Keen Keeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Keen Keeper** is a modern React-based web application that helps users to connect with friends and interects with them through call, text and video. It helps to create bonding and nurture the relationship. It shows the interacts timeline and also shows charts accroding to interactions type.Built with  a clean, responsive and visually appealing modern design.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Technologies Used
 
-## React Compiler
+- React.js
+- React Router
+- Tailwind CSS
+- DaisyUI
+- echarts
+- React Toastify 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+- 📋 Friends managamnet: user can intereacts with friends through call, text & video. Also see the friends detail profile via clicking frineds card.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔗 Interaction timeline: The timline page shows list of how and when interacts with friends. User can also filter the list as which method interacts like via call, text or video.
+
+
+- 🎨 Stats through pie-chart:
+    User can see the interactions statestics through modern pie-chart. w
+
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/Belal-hossainn/Keen-keeper.git
+cd Keen-keeper
+npm install
+npm run dev
+

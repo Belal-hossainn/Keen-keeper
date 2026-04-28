@@ -12,7 +12,7 @@ const FriendDetails = () => {
     console.log(connectFriends, "friends from context");
     const friends = useLoaderData();
     const friend = friends.find(f => f.id === parseInt(id));
-   const { id: friendId, name, picture, days_since_contact, tags, status, goal, next_due_date, bio } = friend;
+   const { id: friendId, name, picture, days_since_contact, tags, status, goal, next_due_date, bio, email } = friend;
 
    const formattedDate = new Date(next_due_date).toLocaleDateString('en-US', {
   month: 'short',
@@ -33,7 +33,7 @@ const handleFriend = (method) => {
                 })
             }
         ]);
-        toast.success(`${friend.name} ${method} successfuly `)
+        toast.success(` ${method} with ${friend.name} `)
     };
   return (
    <div className=" bg-base-200 p-6">
@@ -56,53 +56,37 @@ const handleFriend = (method) => {
     </div>
             <div className="badge rounded-full px-4 py-2 bg-red-400 text-white">{friend.status}</div>
 
-            <p className="text-xs italic text-gray-500">
-              {bio}
-            </p>
-
-            <p className="text-sm text-gray-400">
-              Preferred: email
-            </p>
-            
-          </div>
+            <p className="text-xs italic text-gray-500">{bio}</p>
+            <p className="text-sm text-gray-400">{email} </p> 
+           </div>
             </div>
             <div> <div className="mt-5 space-y-2">
               <button className="btn bg-base-100 shadow  w-full flex items-center gap-2">
                 <HiOutlineClock /> Snooze 2 Weeks
               </button>
-
               <button className="btn bg-base-100 shadow w-full flex items-center gap-2">
                 <HiOutlineArchive /> Archive
               </button>
-
               <button className="btn bg-base-100 text-red-400 shadow w-full flex items-center gap-2">
                 <MdDeleteOutline /> Delete
               </button>
             </div></div>
           </div>
-
-          {/* Right Side */}
           <div className="md:col-span-2 space-y-4">
-
-            {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="card bg-base-100 p-6 shadow text-center">
                 <h2 className="text-3xl text-[#244D3F] font-semibold">{days_since_contact}</h2>
                 <p className="text-[#64748B]">Days Since Contact</p>
               </div>
-
               <div className="card bg-base-100 p-6 shadow text-center">
                 <h2 className="text-3xl text-[#244D3F] font-semibold">{goal}</h2>
                 <p className="text-[#64748B]">Goal (Days)</p>
               </div>
-
               <div className="card bg-base-100 p-6 shadow text-center">
                 <h2 className="text-2xl text-[#244D3F] font-semibold">{formattedDate}</h2>
                 <p className="text-[#64748B]">Next Due</p>
               </div>
             </div>
-
-            {/* Relationship Goal */}
             <div className="card bg-base-100 p-6 shadow flex flex-row justify-between items-center">
               <div>
                 <h3 className="text-lg text-[#244D3F] font-semibold">
@@ -114,31 +98,25 @@ const handleFriend = (method) => {
               </div>
               <button className="btn btn-sm ">Edit</button>
             </div>
-
-            {/* Quick Check-In */}
             <div className="card bg-base-100 p-6 shadow">
               <h3 className="text-lg text-[#244D3F] font-semibold mb-4">
                 Quick Check-In
               </h3>
-
               <div className="grid grid-cols-3 gap-6">
                 <button onClick={() => handleFriend("call")} className="btn bg-[#F8FAFC] text-[#1F2937] shadow flex flex-col h-20 gap-2">
                   <FaPhoneAlt className="text-lg" />
                   <span>Call</span>
                 </button>
-
                 <button onClick={() => handleFriend("text")} className="btn bg-[#F8FAFC] text-[#1F2937]  shadow flex flex-col h-20 gap-2">
                   <FaCommentDots className="text-lg" />
                   <span>Text</span>
                 </button>
-
                 <button onClick={() => handleFriend("video")} className="btn bg-[#F8FAFC] text-[#1F2937] shadow flex flex-col h-20 gap-2">
                   <FaVideo className="text-lg" />
                   <span>Video</span>
                 </button>
               </div>
             </div>
-
           </div>
         </div>
 

@@ -4,7 +4,6 @@ import { FriendContext } from "../../context/FriendProvider";
 
 const StatsPage = () => {
   const { connectFriends } = useContext(FriendContext);
-  console.log(connectFriends, "friends from context in stats page");
   const callConnections = connectFriends.filter(friend => friend.method === "call");
   const textConnections = connectFriends.filter(friend => friend.method === "text");
   const videoConnections = connectFriends.filter(friend => friend.method === "video");
@@ -45,8 +44,7 @@ const StatsPage = () => {
         <Legend />
         <Tooltip />
       </PieChart>
-      </div>
-      
+      </div>  
     </div>
   );
 };
